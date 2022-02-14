@@ -2,7 +2,7 @@ import {Request, Response} from 'express'
 import AuthService from '../Services/AuthService'
 import {StatusCodes} from 'http-status-codes'
 
-class UserController{
+class AuthController {
     public async login(req: Request, res: Response) {
         if (req.body.cnpj && req.body.password) {
             let loginData = await AuthService.authentication({cnpj: req.body.cnpj, password: req.body.password})
@@ -28,4 +28,4 @@ class UserController{
 
 }
 
-export default new UserController()
+export default new AuthController()

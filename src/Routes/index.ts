@@ -1,12 +1,12 @@
 import { Application } from 'express'
 import { Router } from 'express'
 import Auth from '../Middlewares/AuthMiddleware'
-import UserController from '../Controllers/UserController'
+import AuthController from '../Controllers/AuthController'
 
 export default (app: Application) => {
     const auth = Router()
-    auth.post('/login', UserController.login)
-    auth.get('/isAuth', UserController.isAuth)
+    auth.post('/login', AuthController.login)
+    auth.get('/isAuth', AuthController.isAuth)
     app.use('/Auth', auth)
 
     const users = Router()
