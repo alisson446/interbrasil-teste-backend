@@ -1,0 +1,7 @@
+version: '3.0'
+services:
+  mongoDb:
+    container_name: agora-mongo
+    image: mongo
+    ports:
+      - '27017:27017'
